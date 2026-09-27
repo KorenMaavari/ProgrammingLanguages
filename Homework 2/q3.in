@@ -1,0 +1,43 @@
+print "===TEST START===\n";
+val test1 = describeBookReading
+  (BookReading
+     (Book ("Dark Secrets", "A. Writer", 2020, Thriller),
+      Globglogabgalab,
+      3));
+
+val test2 = describeBookReading
+  (BookReading
+     (Book ("Fairy Tales", "B. Bard", 1999, Fantasy),
+      Globglogabgalab,
+      1));
+
+val test3 = describeBookReading
+  (BookReading
+     (Book ("Wild Plains", "C. Rider", 1980, Western),
+      Anonymous 40,
+      7));
+
+val test4 = describeBookReading
+  (BookReading
+     (Book ("Night Terrors", "D. Spook", 2015, Horror),
+      Anonymous 16,
+      9));
+
+val test5 = describeBookReading
+  (BookReading
+     (Book ("Haunted House", "E. Ghost", 2010, Horror),
+      Anonymous 25,
+      2));
+
+val test6 = describeBookReading
+  (BookReading
+     (Book ("Unknown Text", "Mystery Author", 2022, Other),
+      Anonymous 50,
+      6));
+
+val test7 = describeBookReading
+  (BookReading
+     (Book ("Science 101", "G. Genius", 2018, Science),
+      Reader ("Alice", 30),
+      9));
+      

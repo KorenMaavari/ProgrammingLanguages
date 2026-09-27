@@ -1,0 +1,21 @@
+val it = () : unit
+val test1 =
+  "Globglogabgalab read \"Dark Secrets\" by A. Writer in 2020 - Genre: Thriller - Rating: 10/10 splendid!"
+  : string
+val test2 =
+  "Globglogabgalab read \"Fairy Tales\" by B. Bard in 1999 - Genre: Fantasy - Rating: 10/10"
+  : string
+val test3 =
+  "cowboy read \"Wild Plains\" by C. Rider in 1980 - Genre: Western - Rating: 7/10"
+  : string
+val test4 =
+  "16-year-old reader read \"Night Terrors\" by D. Spook in 2015 - Genre: Horror - Rating: 5/10"
+  : string
+val test5 =
+  "25-year-old reader read \"Haunted House\" by E. Ghost in 2010 - Genre: Horror - Rating: 8/10"
+  : string
+val test6 = "Someone read something" : string
+val test7 =
+  "Alice read \"Science 101\" by G. Genius in 2018 - Genre: Science - Rating: 9/10"
+  : string
+- 

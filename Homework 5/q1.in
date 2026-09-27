@@ -1,0 +1,229 @@
+fun toList NIL = []
+  | toList (NEXT(x,xs)) = x::(toList (xs()));
+
+val song1 = SONG("Never Gonna Give You Up","Rick Astley",10);
+val song2 = SONG("Never","O Super, Mag.Lo",9);
+val song3 = SONG("Gonna","SaelirBois",8);
+val song4 = SONG("Let You Down","NF",7);
+val song5 = SONG("NEVER","JID",6);
+val song6 = SONG("Gonna","Blake Shelton",5);
+val song7 = SONG("Run-Around","Blues Traveler",4);
+val song8 = SONG("and","EDEN",3);
+
+print "===TEST START===\n";
+
+(* combinePlaylists *)
+
+val test1_1 = let
+    val playlist1 = NIL
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+    val res = combinePlaylists playlist1 playlist2
+in
+    toList res
+end;
+
+val test1_2 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val res = combinePlaylists playlist1 playlist2
+in
+    toList res
+end;
+
+val test1_3 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1,fn()=>
+        NIL)
+
+    val res = combinePlaylists (combinePlaylists playlist1 playlist3) playlist2
+in
+    toList res
+end;
+
+(* filter *)
+
+val test2_1 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1,fn()=>
+        NEXT(song6,fn()=>
+        NEXT(song7,fn()=>
+        NEXT(song8,fn()=>
+        NIL))))
+
+    val allPlaylist =
+        combinePlaylists
+            (combinePlaylists playlist1 playlist2)
+            playlist3
+
+    val res = filter NONE (SOME(8)) allPlaylist
+in
+    toList res
+end;
+
+val test2_2 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1,fn()=>
+        NEXT(song6,fn()=>
+        NEXT(song7,fn()=>
+        NEXT(song8,fn()=>
+        NIL))))
+
+    val allPlaylist =
+        combinePlaylists
+            (combinePlaylists playlist1 playlist2)
+            playlist3
+
+    val res = filter (SOME("Rick Astley")) NONE allPlaylist
+in
+    toList res
+end;
+
+val test2_3 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1,fn()=>
+        NEXT(song6,fn()=>
+        NEXT(song7,fn()=>
+        NEXT(song8,fn()=>
+        NIL))))
+
+    val allPlaylist =
+        combinePlaylists
+            (combinePlaylists playlist1 playlist2)
+            playlist3
+
+    val res = filter (SOME("NF")) (SOME(7)) allPlaylist
+in
+    toList res
+end;
+
+(* sortPlaylist *)
+
+val test3 = let
+    val playlist1 =
+        NEXT(song5,fn()=>
+        NEXT(song2,fn()=>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3,fn()=>
+        NEXT(song4,fn()=>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1,fn()=>
+        NEXT(song6,fn()=>
+        NEXT(song7,fn()=>
+        NEXT(song8,fn()=>
+        NIL))))
+
+    val allPlaylist =
+        combinePlaylists
+            (combinePlaylists playlist1 playlist2)
+            playlist3
+
+    val res = sortPlaylist allPlaylist
+in
+    toList res
+end;
+
+print "===TEST ADVANCED_PLAYLIST ===\n";
+
+val allPlaylist = let
+    val playlist1 =
+        NEXT(song5, fn () =>
+        NEXT(song2, fn () =>
+        NIL))
+
+    val playlist2 =
+        NEXT(song3, fn () =>
+        NEXT(song4, fn () =>
+        NIL))
+
+    val playlist3 =
+        NEXT(song1, fn () =>
+        NEXT(song6, fn () =>
+        NEXT(song7, fn () =>
+        NEXT(song8, fn () =>
+        NIL))))
+in
+    combinePlaylists
+        (combinePlaylists playlist1 playlist2)
+        playlist3
+end;
+
+val helperPrint = toList allPlaylist;
+
+val (skip, play) = advancedPlaylist allPlaylist
+
+val start1 = play ();
+val _ = skip ();
+
+val start2 = play ();
+
+val start3 = play ();
+
+val _ = skip ();
+val _ = skip ();
+val _ = skip ();
+val _ = skip ();
+
+val what1 = play ();
+
+val _ = skip ();
+val _ = skip ();
+val _ = skip ();
+val _ = skip ();
+val _ = skip ();
+
+val what2 = play ();

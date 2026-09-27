@@ -1,0 +1,43 @@
+use_module(library(yall)).
+print("===TEST START===").
+
+print("===PART ONE===").
+allZeroes([0,0,0,0,0]).
+
+allZeroes([0,0,1,0,0]).
+
+print("===PART TWO===").
+multiplyByMonom(3,[0,1,1],X).
+
+multiplyByMonom(2,[1,0,1,1],X).
+
+print("===PART THREE===").
+addPolynoms([1,1,1],[1,1,1],X).
+
+addPolynoms([1,0,1],[1,1,0,1],X).
+
+print("===PART FOUR===").
+trimLeadingZeroes([1,1,1],X).
+
+trimLeadingZeroes([1,0,0,0,1,0,0],X).
+
+print("===PART FIVE===").
+degree([1,1,1,0,0],X).
+
+degree([1,0,0,0,1],X).
+
+print("===PART SIX===").
+makeZeroes(3,X).
+
+makeZeroes(5,X).
+
+print("===PART SEVEN===").
+% (x^3 + x^2 + 1) / (x^2 + 1) leaves remainder x
+polynomDivision([1,0,1,1],[1,0,1],X).
+
+% (x^8 + x^6 + x^4 + x^2) / (x^3 + x^2 + 1) leaves remainder x^2+x+1
+polynomDivision([0,0,1,0,1,0,1,0,1],[1,0,1,1],X).
+
+print("===EXTRA===").
+% message: (x^4+x^3+1) generator: (x^3 + x^2 + 1)
+crc([1,0,0,1,1], [1,0,1,1], C).

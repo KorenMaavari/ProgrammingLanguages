@@ -1,0 +1,108 @@
+fun insert cmp x [] = [x]
+  | insert cmp x (y::ys) =
+      if cmp (x, y) then
+        x :: y :: ys
+      else
+        y :: insert cmp x ys
+
+fun sort cmp [] = []
+  | sort cmp (x::xs) = insert cmp x (sort cmp xs);
+
+print "===TEST START===\n";
+
+val test_reach_1 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val reach = reachability vertex edges [1]
+in
+    sort (op<) reach
+end;
+
+val test_reach_2 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val reach = reachability vertex edges [9]
+in
+    sort (op<) reach
+end;
+
+val test_reach_3 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val reach = reachability vertex edges [7]
+in
+    sort (op<) reach
+end;
+
+val test_safe_1 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val safe = safety vertex edges [1]
+in
+    sort (op<) safe
+end;
+
+val test_safe_2 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val safe = safety vertex edges [9]
+in
+    sort (op<) safe
+end;
+
+val test_safe_3 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val safe = safety vertex edges [7]
+in
+    sort (op<) safe
+end;
+
+val test_buchi_1 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val buchi = buchi vertex edges [8]
+in
+    sort (op<) buchi
+end;
+
+val test_buchi_2 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val buchi = buchi vertex edges [9]
+in
+    sort (op<) buchi
+end;
+
+val test_buchi_3 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val buchi = buchi vertex edges [6]
+in
+    sort (op<) buchi
+end;
+
+val test_coBuchi_1 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val coBuchi = coBuchi vertex edges [8]
+in
+    sort (op<) coBuchi
+end;
+
+val test_coBuchi_2 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val coBuchi = coBuchi vertex edges [9,6]
+in
+    sort (op<) coBuchi
+end;
+
+val test_coBuchi_3 = let
+    val vertex = [1,2,3,4,5,6,7,8,9]
+    val edges = [(1,2),(1,4),(2,3),(2,5),(3,6),(3,5),(4,1),(4,5),(5,7),(5,8),(6,9),(7,4),(7,8),(8,9),(9,6)]
+    val coBuchi = coBuchi vertex edges [7]
+in
+    sort (op<) coBuchi
+end;
+

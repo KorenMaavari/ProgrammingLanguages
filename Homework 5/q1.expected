@@ -1,0 +1,38 @@
+val it = () : unit
+val test1_1 = [SONG ("Gonna","SaelirBois",8),SONG ("Let You Down","NF",7)]
+  : song list
+val test1_2 =
+  [SONG ("NEVER","JID",6),SONG ("Never","O Super, Mag.Lo",9),
+   SONG ("Gonna","SaelirBois",8),SONG ("Let You Down","NF",7)] : song list
+val test1_3 =
+  [SONG ("NEVER","JID",6),SONG ("Never","O Super, Mag.Lo",9),
+   SONG ("Never Gonna Give You Up","Rick Astley",10),
+   SONG ("Gonna","SaelirBois",8),SONG ("Let You Down","NF",7)] : song list
+val test2_1 =
+  [SONG ("Never","O Super, Mag.Lo",9),SONG ("Gonna","SaelirBois",8),
+   SONG ("Never Gonna Give You Up","Rick Astley",10)] : song list
+val test2_2 = [SONG ("Never Gonna Give You Up","Rick Astley",10)] : song list
+val test2_3 = [SONG ("Let You Down","NF",7)] : song list
+val test3 =
+  [SONG ("Never Gonna Give You Up","Rick Astley",10),
+   SONG ("Never","O Super, Mag.Lo",9),SONG ("Gonna","SaelirBois",8),
+   SONG ("Let You Down","NF",7),SONG ("NEVER","JID",6),
+   SONG ("Gonna","Blake Shelton",5),SONG ("Run-Around","Blues Traveler",4),
+   SONG ("and","EDEN",3)] : song list
+===TEST ADVANCED_PLAYLIST ===
+val it = () : unit
+val allPlaylist = NEXT (SONG ("NEVER","JID",6),fn) : playlist
+val helperPrint =
+  [SONG ("NEVER","JID",6),SONG ("Never","O Super, Mag.Lo",9),
+   SONG ("Gonna","SaelirBois",8),SONG ("Let You Down","NF",7),
+   SONG ("Never Gonna Give You Up","Rick Astley",10),
+   SONG ("Gonna","Blake Shelton",5),SONG ("Run-Around","Blues Traveler",4),
+   SONG ("and","EDEN",3)] : song list
+val skip = fn : unit -> unit
+val play = fn : unit -> song option
+val start1 = SOME (SONG ("NEVER","JID",6)) : song option
+val start2 = SOME (SONG ("Never","O Super, Mag.Lo",9)) : song option
+val start3 = SOME (SONG ("Never","O Super, Mag.Lo",9)) : song option
+val what1 = SOME (SONG ("Gonna","Blake Shelton",5)) : song option
+val what2 = NONE : song option
+- 

@@ -1,0 +1,49 @@
+true.
+
+"===PART ONE==="
+true.
+
+true.
+
+false.
+
+"===PART TWO==="
+true.
+
+X = [0, 0, 0, 0, 1, 1] 
+X = [0, 0, 1, 0, 1, 1] 
+"===PART THREE==="
+true.
+
+X = [0, 0, 0].
+
+X = [0, 1, 1, 1].
+
+"===PART FOUR==="
+true.
+
+X = [1, 1, 1].
+
+X = [1, 0, 0, 0, 1].
+
+"===PART FIVE==="
+true.
+
+X = 2.
+
+X = 4.
+
+"===PART SIX==="
+true.
+
+X = [0, 0, 0] 
+X = [0, 0, 0, 0, 0] 
+"===PART SEVEN==="
+true.
+
+X = [0, 1] 
+X = [1, 1, 1] 
+"===EXTRA==="
+true.
+
+C = [1, 0, 0, 1, 1, 1, 1] 

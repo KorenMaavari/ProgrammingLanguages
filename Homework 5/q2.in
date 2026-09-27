@@ -1,0 +1,16 @@
+use_module(library(yall)).
+print("===TEST START===").
+
+mersenne(7).
+
+mersenne(8).
+
+collatz(1,N).
+
+collatz(2,N).
+
+collatz(5,N).
+
+fermat(1,N).
+
+fermat(4,N).
