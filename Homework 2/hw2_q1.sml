@@ -1,0 +1,10 @@
+fun sig1 f1 a b c f2 d = if f2 d then f1 (a , b) else c;
+fun sig2 a b = if (a + b) > 1.0 then true else false;
+fun sig3 f1 a = [[f1 (hd (hd a)) ]];
+fun sig4 () = 1;
+fun sig5 f1 f2 a d = f2 (f1 a);
+fun sig6 f1 a c = [f1 (hd a)];
+fun sig7 b i1 a i2 = if (b andalso ((i1 + i2) > 0)) then a else a;
+fun sig8 f1 f2 a = f2 a (f1 a);
+fun sig9 f1 f2 a = f2 (f1 a);
+fun sig10 f1 f2 a b = if f1 a then f2 f1 else b;
